@@ -1,0 +1,123 @@
+.vacancy {
+   background: inherit;
+   transition: .3s linear;
+}
+
+.vacancy:hover {
+   background: #fafafa;
+}
+
+
+.view,
+.date {
+   display: flex;
+   align-items: center;
+   gap: .6rem;
+}
+
+/* =============Info */
+
+
+.info {
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+   font-size: 1.2rem;
+}
+
+
+
+.info svg {
+   width: 1.8rem;
+   height: 1.8rem;
+}
+
+/* =============View */
+
+
+.view::after {
+   content: '';
+   display: block;
+   width: 1px;
+   height: 10px;
+   margin: 0 1rem 0 .4rem;
+   background-color: rgba(0, 0, 0, 0.3);
+   transition: .3s linear;
+}
+
+.view svg {
+   fill: none;
+}
+
+.view svg circle,
+.view svg path {
+   stroke: rgba(0, 0, 0, 0.5);
+   transition: .3s linear;
+}
+
+
+/* =============Like */
+
+
+.like svg {
+   fill: white;
+   stroke: #ff8686;
+   cursor: pointer;
+   transition: .2s;
+}
+
+.like svg:hover {
+   fill: #ff8686;
+}
+
+.active svg {
+   transition: .2s;
+   fill: #ff8686;
+}
+
+
+/* =============Date */
+
+
+.date::after {
+   content: '';
+   display: block;
+   width: 1px;
+   height: 10px;
+   margin: 0 1rem;
+   background-color: rgba(0, 0, 0, 0.3);
+   transition: .3s linear;
+}
+
+
+
+
+/* =============dark */
+
+.vacancy.dark:hover {
+   background: rgba(111, 117, 126, .1);
+}
+
+
+.view.dark::after {
+   background-color: rgba(255, 255, 255, .5);
+}
+
+.view.dark svg circle,
+.view.dark svg path {
+   stroke: rgba(255, 255, 255, .5);
+}
+
+.date.dark::after {
+   background-color: rgba(255, 255, 255, .5);
+}
+
+.like.dark svg {
+   fill: #262626;
+   stroke: #ff8686;
+   transition: .2s;
+}
+
+.like.dark svg:hover {
+   fill: #ff8686;
+}

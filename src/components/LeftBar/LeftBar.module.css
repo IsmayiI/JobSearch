@@ -1,0 +1,25 @@
+.leftBar {
+   padding: 1.5rem 1.5rem 1.8rem;
+   height: 100vh;
+   display: flex;
+   flex-direction: column;
+   justify-content: space-between;
+}
+
+.leftBar main {
+   flex: 1 1 auto;
+}
+
+
+.header {
+   margin-bottom: 3rem;
+}
+
+.header img {
+   width: 13rem;
+   margin: .5rem 0;
+}
+
+.action {
+   margin-bottom: 2rem;
+}

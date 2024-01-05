@@ -1,0 +1,100 @@
+{
+   "categories": [
+      {
+         "id": 1,
+         "name": "Maliyyə xidmət",
+         "image": "https://storage.jobsearch.az/storage/pages/850/vector.svg"
+      },
+      {
+         "id": 2,
+         "name": "Komputerləşmə və İKT",
+         "image": "https://storage.jobsearch.az/storage/pages/1076/category-it.svg"
+      },
+      {
+         "id": 3,
+         "name": "Otel, İaşə, Turizm",
+         "image": "https://storage.jobsearch.az/storage/pages/1471/hotel-n.svg"
+      }
+   ],
+   "companies": [
+      {
+         "id": 1,
+         "slug": "kontakt-home",
+         "name": "Kontakt home",
+         "subtitle": "Specialty Retail",
+         "image": "https://storage.jobsearch.az/storage/pages/5012/kontakt-home.svg",
+         "description": "Kontakt Home was started as \"Kontakt Mobile\" in 2006 with the first small store selling mobile phones, accessories and mobile numbers.\nIn 2013, the furniture category was added to the wide range of electronics and home appliances categories.\nSince that year, furniture produced by local and foreign brands, as well as our own factory, has been put on sale in our stores, thereby completing the \"Home\" concept.\n\nFor more than 15 years, we have been driven by honest service and the goal of being \"the best\", which is the foundation of our strong reputation.\n\nKontakt Home currently continues to delight as one of the largest electronics and furniture chains not only in Azerbaijan, but also in the Caucasus region with 34 branches and 1 online store.\nWe have chosen the phrase \"Contact - Sevindirir\" as our slogan.\n\nWe always pride ourselves on ensuring career advancement by selecting excellence and brilliance from among our team members.\nFor those who want to join our great team, we promise a healthy and positive corporate environment, mutual trust, strong and rich work experience!",
+         "phone": "*012 310 24 24",
+         "website": "kontakt.az"
+      },
+      {
+         "id": 2,
+         "slug": "aztelekom",
+         "name": "Aztelekom",
+         "subtitle": "Telecommunication services",
+         "image": "https://storage.jobsearch.az/storage/pages/2650/aztelekommm.svg",
+         "description": "Telephone communication in Azerbaijan was established in 1881 by the \"Nobel Brothers Society\" with the construction of the first telephone line.\n\nIn the following years, when telephone communication developed, telephone connections were established not only in the city center, but also with the suburbs and villages. Initially, in 1933, the Baku Intercity Telephone Station was separated from the Baku City Telephone Station and started functioning as an independent structure.\n\nOver the years, important steps were taken to establish communication links in all cities and villages of the republic. In August 1992, the Aztelecom Production Union, organized on the basis of the Telephone Communication Production Union, was established with the aim of providing a number of telecommunication services in all regions of the republic.\n\n\"Aztelecom\" internet provider was established in 2004, taking into account the demand and desire of the population for internet in the regions.",
+         "location": "Tbilisi Ave. 187, Baku city, Azerbaijan, AZ1122",
+         "phone": "(+994 12) 3440000",
+         "website": "www.aztelekom.az"
+      },
+      {
+         "id": 3,
+         "slug": "kristal-abşeron",
+         "name": "Kristal Abşeron",
+         "subtitle": "Construction",
+         "image": "https://storage.jobsearch.az/storage/pages/5042/kristal-absheron.svg",
+         "description": "Our company, which started its successful activity under the name \"Crystal Absheron\" in 2003, has signed many big projects based on values ​​such as reliability and honesty.\n\nToday, \"Kristal Absheron\" is one of the most reliable and high-quality construction companies of our country. Our company has already achieved its goals with great success and is determined to continue this course in its future activities.\n\nOne of the main tasks for \"Kristan Absheron\", which tries to support the social life of the society by building quality buildings suitable for the era in which the present and future generations will live, is to always improve the standard of living of its residents.",
+         "location": "Baku city, Nasimi district, 2nd microdistrict, Huseynbala Aliyev 32/24",
+         "phone": "*1544 / 012 568 60 41 / 050 448 00 00",
+         "website": "www.kristalabsheron.az"
+      }
+   ],
+   "vacancies": [
+      {
+         "id": 1,
+         "slug": "crm-menecer",
+         "category_id": 1,
+         "company_id": 1,
+         "name": "CRM menecer",
+         "demands": "High education; Fluent knowledge of the Azerbaijani language, knowledge of the Russian language is an advantage; Work experience on a suitable position - not less than 3 years; Work experience with Email and Push sending services and CRM systems; Must know the main indicators of efficiency evaluation; Organizational, planning ability and ability to work with a large amount of information; Responsibility, analytical and systematic way of thinking; Must be digitally oriented; Strong communication and management skills.",
+         "info": "Implementation of sending notifications through SMS, Email, and Push sending services; Segmentation of users according to behavior; Conducting regular work in the direction of statistical database, their analysis, and segmentation; Thinking and testing theories, conducting A/B tests, and making decisions based on them; Improvement of customer behavior paths (customer journey map); Increasing the conversion rate of incomplete orders; Preparation of reports, planning, and analysis of processes; Analysis and segmentation of the customer base on various parameters; Conducting work in the direction of increasing repeat and new orders.",
+         "condition": "Working days: I-V days; Working hours: 09:00-18:00.",
+         "view": 0,
+         "industry": "Administration, business and management",
+         "created_at": "2023-12-28"
+      },
+      {
+         "id": 2,
+         "slug": "call-center-operator",
+         "category_id": 2,
+         "company_id": 2,
+         "name": "Call center operator",
+         "demands": "Must have secondary or secondary education; Must know MS Office programs; Must know Azerbaijani language, knowledge of foreign languages ​​is an advantage; Must have high written and oral communication skills; Ability to work in a team; Work skills with databases;",
+         "info": "Accept customer requests through existing communication channels; To provide information, advice and service support to existing and potential customers about the products and services of related institutions through existing communication channels (telephone, e-mail, internet, etc.); To provide information about the operation mode, location, branch and additional offices of related institutions; Adequately and correctly resolve controversial / conflict situations / customer issues; Receive and process incoming applications according to internal processing procedures and forward calls and electronic applications to relevant institutions/departments by registering them accordingly; Dealing with customers who apply politely and attentively; Establishing a conversation according to the existing assessment criteria; Add reliable and complete information in the database based on the results of customer exit calls;",
+         "view": 0,
+         "industry": "Retail and customer services",
+         "created_at": "2023-12-23"
+      },
+      {
+         "id": 3,
+         "slug": "it-specialist",
+         "category_id": 3,
+         "company_id": 3,
+         "name": "IT specialist",
+         "demands": "High education; 2-3 years of work experience in the relevant field; Knowledge of foreign languages: Russian Knowledge of IP network, server operating systems and electronic systems; Ability to install local networks; Active Directory, DNS, DHCP, Group Policies, File Server, Exchange Server Microsoft Windows Server 2016R2-2019 (AD DS, DHCP, DNS, VmWare, Print Server, File Server, RDS); Microsoft Exchange 2013, system knowledge; Knowledge of TCP/IP, NAT, VPN; Installation of DVR and NVR.",
+         "info": "Ensure installation, download and troubleshooting of all hardware and software including laptops, desktops, printers and other network equipment; Installs new computers and joins them to the corporate domain; Checks IT equipment during the employee handover process; Provide on-site and remote IT support to main and external company offices; Office external and internal international communication access, provision and control of Internet access; Troubleshooting of computer networks, network monitoring; To provide installation and tuning of LAN/WAN facilities.",
+         "condition": "6-day work schedule; The salary will be determined according to the knowledge and skills of the candidate.",
+         "view": 0,
+         "industry": "Computing and ICT",
+         "created_at": "2023-12-20"
+      }
+   ],
+   "likes": [
+      1,
+      2,
+      3,
+      4,
+      5
+   ]
+}

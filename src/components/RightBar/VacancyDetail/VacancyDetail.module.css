@@ -1,0 +1,69 @@
+.detail {
+   padding: 0 4rem;
+}
+
+
+/* ========================Header */
+
+
+.header {
+   padding: .5rem 0 .3rem;
+   margin-bottom: 1.8rem;
+}
+
+
+/* =============Info */
+
+
+.info {
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+   gap: 1.4rem;
+}
+
+
+
+.info svg {
+   width: 1.8rem;
+   height: 1.8rem;
+}
+
+/* =============View */
+
+.view {
+   display: flex;
+   align-items: center;
+}
+
+.view svg {
+   fill: none;
+   margin-right: 0.8rem;
+}
+
+.view svg circle,
+.view svg path {
+   stroke: rgba(0, 0, 0, 0.5);
+}
+
+
+/* =============Like */
+
+
+.like svg {
+   fill: white;
+   stroke: #ff8686;
+   cursor: pointer;
+   transition: .2s;
+}
+
+.like svg:hover {
+   transition: .2s;
+   fill: #ff8686;
+}
+
+.active svg {
+   cursor: pointer;
+   transition: .2s;
+   fill: #ff8686;
+}

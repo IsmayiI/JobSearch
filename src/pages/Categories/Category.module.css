@@ -1,0 +1,10 @@
+.category {
+   background: inherit;
+   transition: .3s linear;
+}
+
+.category:hover {
+   background: #fafafa;
+}
+
+.count {}

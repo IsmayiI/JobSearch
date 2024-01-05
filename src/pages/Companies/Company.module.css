@@ -1,0 +1,10 @@
+.company {
+   background: inherit;
+   transition: .3s linear;
+}
+
+.company:hover {
+   background: #fafafa;
+}
+
+.count {}

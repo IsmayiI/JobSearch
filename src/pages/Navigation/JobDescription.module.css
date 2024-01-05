@@ -1,0 +1,14 @@
+.description {
+   padding: 2.5rem 4rem;
+}
+
+.description h4 {
+   font-weight: 500;
+   margin-bottom: 2rem;
+}
+
+.description p {
+   white-space: pre-line;
+   line-height: 1.5;
+   margin-bottom: 2rem;
+}

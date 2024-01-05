@@ -1,0 +1,63 @@
+.footer {
+   font-size: 1.3rem;
+   font-weight: 500;
+   color: rgba(0, 0, 0, 0.5);
+   transition: .3s linear;
+}
+
+
+
+.footer nav {
+   margin-bottom: 1.6rem;
+}
+
+.footer ul {
+   display: flex;
+   justify-content: start;
+   align-items: center;
+   gap: 2rem;
+}
+
+.footer a {
+   color: inherit;
+}
+
+.footer a::after {
+   content: '';
+   display: block;
+   margin: 0 auto;
+   margin-top: .2rem;
+   width: 98%;
+   height: .1rem;
+   background-color: rgba(0, 0, 0, 0.5);
+   opacity: 0;
+   transition: .3s linear;
+}
+
+
+
+.footer a:hover::after {
+   transition: .3s linear;
+   opacity: 1;
+}
+
+.footer span {
+   font-size: 1.2rem;
+   color: rgba(0, 0, 0, .3);
+   transition: .3s linear;
+}
+
+
+/* ================DARK */
+
+.footer.dark {
+   color: rgba(255, 255, 255, .5)
+}
+
+.footer.dark a::after {
+   background-color: rgba(255, 255, 255, .5);
+}
+
+.footer.dark span {
+   color: rgba(255, 255, 255, .3)
+}

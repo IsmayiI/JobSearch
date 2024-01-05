@@ -1,0 +1,9 @@
+.container {
+   display: grid;
+   grid-template-columns: 18.34% 1fr 1fr;
+}
+
+.grid div {
+   background-color: blue;
+   border: 2px solid black;
+}

@@ -1,0 +1,56 @@
+.information {
+   margin-bottom: 3.5rem;
+}
+
+.information h1 {
+   font-size: 2rem;
+   font-weight: 500;
+   margin-bottom: 1.1rem;
+}
+
+.information div {
+   display: flex;
+   align-items: center;
+   width: 18.7rem;
+   color: #de7d0b;
+   border: 1px solid #de7d0b;
+   border-radius: 5px;
+   padding: 0.7rem 1.2rem;
+   margin-bottom: 0.5rem;
+   font-weight: 500;
+}
+
+
+.information div svg {
+   width: 2rem;
+   height: 2rem;
+   fill: white;
+   stroke: #de7d0b;
+   stroke-width: 2;
+   margin-right: 0.5rem;
+}
+
+.information a {
+   display: inline-block;
+   color: rgba(0, 0, 0, .5);
+   transition: .3s linear;
+}
+
+.information a:hover {
+   color: #0c4dde;
+}
+
+.information a::after {
+   content: '';
+   display: block;
+   margin: 0 auto;
+   margin-top: .2rem;
+   width: 100%;
+   height: .1rem;
+   background-color: rgba(0, 0, 0, .5);
+}
+
+.information a:hover::after {
+   transition: .3s linear;
+   background-color: #0c4dde;
+}

@@ -1,0 +1,47 @@
+/*============= FONTS =============== */
+
+@font-face {
+   font-family: 'Brutal Type';
+   src: url('./assets/fonts/BrutalType/BrutalType.woff2'),
+      url('./assets/fonts/BrutalType/BrutalType.woff');
+   font-weight: 400;
+   font-display: swap;
+   font-style: normal;
+}
+
+@font-face {
+   font-family: 'Brutal Type';
+   src: url('./assets/fonts/BrutalType/BrutalType-Medium.woff2'),
+      url('./assets/fonts/BrutalType/BrutalType-Medium.woff');
+   font-weight: 500;
+   font-display: swap;
+   font-style: normal;
+}
+
+/*============= ROOT =============== */
+
+:root {
+   --colorWhite: #fff;
+   --colorBlack: #000;
+   --colorDark: #262626;
+}
+
+/*============= BODY =============== */
+
+
+body {
+   font-family: 'Brutal Type', sans-serif;
+   font-size: 1.4rem;
+   background-color: var(--colorWhite);
+   color: var(--colorBlack);
+   transition: background-color .3s linear;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+   line-height: 1.2;
+}

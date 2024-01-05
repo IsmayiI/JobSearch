@@ -1,0 +1,83 @@
+.statistic {
+   padding: 6rem;
+}
+
+.statistic p {
+   font-size: 1.3rem;
+   margin-bottom: 1.6rem;
+}
+
+.info {
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+   gap: 1.8rem;
+   width: 43.5rem;
+}
+
+.list {
+   flex: 0 1 50%;
+   border: 1px solid #eaeaea;
+   border-radius: 5px;
+   transition: .3s linear;
+}
+
+.list li {
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+   padding: 1.4rem 2rem;
+   transition: .3s linear;
+}
+
+.list li:nth-child(1) {
+   border-bottom: 1px solid #eaeaea;
+   transition: .3s linear;
+}
+
+.list li span {
+   font-size: 1.6rem;
+   font-weight: 500;
+   line-height: 1.5;
+}
+
+.month {
+   flex: 0 1 50%;
+   background: rgba(12, 77, 222, .05);
+   border-radius: 5px;
+   padding: 1.9rem;
+   color: #0c4dde;
+   font-weight: 500;
+   transition: .3s linear;
+
+}
+
+.month h4 {
+   font-weight: inherit;
+}
+
+.month span {
+   letter-spacing: -.06em;
+   font-weight: 800;
+   font-size: 4.8rem;
+   line-height: 4.8rem;
+   display: block;
+   margin: 0.8rem 0 0.6rem;
+}
+
+
+/* =======dark */
+
+
+.list.dark {
+   border: 1px solid rgba(255, 255, 255, .2)
+}
+
+.list.dark li:nth-child(1) {
+   border-bottom: 1px solid rgba(255, 255, 255, .2);
+}
+
+.month.dark {
+   background: #3e3e3e;
+   color: #fff;
+}

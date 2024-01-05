@@ -1,0 +1,53 @@
+.contact {
+   padding: 4rem 3.2rem;
+}
+
+.contact h2 {
+   font-size: 2rem;
+   font-weight: 500;
+   margin: 0 0 2rem;
+}
+
+.item {
+   /* display: flex;
+   justify-content: start;
+   align-items: start;
+   flex-wrap: wrap; */
+   display: grid;
+   grid-template-columns: 16rem 1fr;
+   grid-template-areas:
+      "first second"
+      "third third";
+   gap: 0 2.5rem;
+   padding-bottom: 3.2rem;
+   margin-bottom: 2.4rem;
+   border-bottom: 1px solid #eaeaea;
+}
+
+.item:last-child {
+   border-bottom: none;
+}
+
+
+.item h3 {
+   grid-area: first;
+   font-size: 1.6rem;
+   font-weight: 500;
+}
+
+.item ul {
+   grid-area: second;
+}
+
+.item a {
+   color: rgba(0, 0, 0, 0.7);
+   line-height: 2.4rem;
+}
+
+
+
+.map {
+   grid-area: third;
+   border-radius: 1rem;
+   margin-top: 2.4rem;
+}

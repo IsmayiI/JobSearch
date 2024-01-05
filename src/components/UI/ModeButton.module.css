@@ -1,0 +1,95 @@
+.mode {
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+   gap: .4rem;
+   border-radius: 8px;
+   padding: 0.2rem;
+   box-shadow: inset 0 4px 18px rgba(0, 0, 0, .1);
+   width: 6rem;
+   height: 3rem;
+   /* transition: all .3s .05s linear; */
+
+}
+
+.mode button {
+   flex: 0 1 50%;
+   height: 100%;
+   display: grid;
+   place-content: center;
+   border-radius: 6px;
+
+}
+
+.mode svg {
+   width: 1.4rem;
+   height: 1.4rem;
+}
+
+
+
+/* ==================Light */
+
+.mode.light {
+   background: #a7abb3;
+   transition: all .3s .05s linear;
+}
+
+.mode.light button:nth-child(1) {
+   background: #fff;
+   box-shadow: 0 3px 8px rgba(0, 0, 0, .15), 0 3px 1px rgba(0, 0, 0, .06);
+   transition: all .3s .05s linear;
+
+}
+
+.mode.light button:nth-child(1) svg {
+   fill: #a7abb3;
+   transition: all .3s .05s linear;
+
+}
+
+.mode.light button:nth-child(2) {
+   background: #a7abb3;
+   transition: all .3s .05s linear;
+
+}
+
+.mode.light button:nth-child(2) svg {
+   fill: white;
+   transition: all .3s .05s linear;
+
+}
+
+
+
+/* ==================Dark */
+
+.mode.dark {
+   background: #4a4a4a;
+   transition: all .3s .05s linear;
+}
+
+.mode.dark button:nth-child(1) {
+   background: #4a4a4a;
+   transition: all .3s .05s linear;
+
+}
+
+.mode.dark button:nth-child(1) svg {
+   fill: #fff;
+   transition: all .3s .05s linear;
+
+}
+
+.mode.dark button:nth-child(2) {
+   background: #fff;
+   box-shadow: 0 3px 8px rgba(0, 0, 0, .15), 0 3px 1px rgba(0, 0, 0, .06);
+   transition: all .3s .05s linear;
+
+}
+
+.mode.dark button:nth-child(2) svg {
+   fill: #4a4a4a;
+   transition: all .3s .05s linear;
+
+}

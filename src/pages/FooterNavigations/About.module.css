@@ -1,0 +1,47 @@
+.about {
+   padding: 4rem 3.2rem;
+}
+
+.about h2 {
+   font-size: 2rem;
+   font-weight: 500;
+   line-height: 1.2;
+   margin-bottom: 2rem;
+}
+
+.about>p {
+   line-height: 1.5;
+   color: rgba(0, 0, 0, .7);
+   margin-bottom: 1.2rem;
+}
+
+.banner {
+   width: 100%;
+   height: 19rem;
+   background-color: #f8f8f8;
+   border-radius: 1rem;
+   display: flex;
+   align-items: center;
+   padding-left: 2.4rem;
+   margin-bottom: 2.8rem;
+}
+
+.banner div {
+   max-width: 26.8rem;
+}
+
+.banner h3 {
+   font-size: 1.8rem;
+   line-height: 2.4rem;
+   color: #0c4dde;
+   margin-bottom: 0.4rem;
+   font-weight: 600;
+}
+
+
+.banner p {
+   color: rgba(0, 0, 0, .7);
+   font-weight: 500;
+   font-size: 1.6rem;
+   line-height: 2.4rem;
+}

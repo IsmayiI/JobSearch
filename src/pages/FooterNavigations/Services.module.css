@@ -1,0 +1,85 @@
+.services {
+   padding: 4rem 3.2rem;
+}
+
+.services h2 {
+   font-size: 2rem;
+   font-weight: 500;
+   margin: 4rem 0 1.6rem;
+}
+
+.services>h2 {
+   margin: 0 0 2rem;
+}
+
+.services ul {}
+
+.item {
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+   gap: 2rem;
+   border: 1px solid #e2e2e2;
+   border-radius: 4px;
+   margin-bottom: 0.8rem;
+   padding: 1.2rem 1.6rem;
+}
+
+.item h3 {
+   font-size: 1.5rem;
+   font-weight: 500;
+   margin-bottom: 0.2rem;
+}
+
+.item div p {
+   color: #4c4c4c;
+   font-size: 1.3rem;
+   line-height: 2rem;
+}
+
+.item>p {
+   flex: 1 0 auto;
+   font-size: 1.6rem;
+   color: #0c4dde;
+   letter-spacing: -.02em;
+   text-align: right;
+   font-weight: 600;
+}
+
+.premium {
+   position: relative;
+}
+
+.premium::after {
+   content: 'Premium';
+   background-color: #aaf674;
+   border-radius: 0 0 5px 5px;
+   position: absolute;
+   top: 0;
+   right: 5.4rem;
+   text-transform: uppercase;
+   font-size: .9rem;
+   font-weight: 700;
+   color: #0c4dde;
+   letter-spacing: -.02em;
+   line-height: 1.1rem;
+   padding: 0.3rem 1.1rem;
+
+}
+
+.info p {
+   line-height: 1.5;
+   color: rgba(0, 0, 0, .7);
+   margin-bottom: 1.2rem;
+}
+
+.info a {
+   display: inline-block;
+   color: #0c4dde;
+   border-bottom: 1px solid #0c4dde;
+   transition: .3s linear;
+}
+
+.info a:hover {
+   border-bottom: 1px solid transparent;
+}

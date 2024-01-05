@@ -1,0 +1,48 @@
+.about {
+   padding: 2.5rem 4rem;
+}
+
+.about h4 {
+   font-weight: 500;
+   margin-bottom: 2rem;
+}
+
+.about p {
+   white-space: pre-line;
+   margin-bottom: 2rem;
+   color: rgba(0, 0, 0, .7);
+   line-height: 1.5;
+}
+
+.info {
+   display: flex;
+   justify-content: start;
+   align-items: start;
+   gap: 4rem;
+}
+
+.map {
+   width: 28rem;
+   height: 28rem;
+   cursor: pointer;
+}
+
+.map img {
+   max-width: 100%;
+}
+
+.info h4 {
+   margin-bottom: 0.7rem;
+}
+
+.info p {
+   margin-bottom: 1.6rem;
+}
+
+.info a {
+   color: inherit;
+}
+
+.website {
+   border-bottom: 1px solid #7f7f7f;
+}
