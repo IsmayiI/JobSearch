@@ -7,12 +7,14 @@
    font-weight: 500;
    line-height: 1.2;
    margin-bottom: 2rem;
+   transition: color .3s linear;
 }
 
 .about>p {
    line-height: 1.5;
    color: rgba(0, 0, 0, .7);
    margin-bottom: 1.2rem;
+   transition: color .3s linear;
 }
 
 .banner {
@@ -24,6 +26,7 @@
    align-items: center;
    padding-left: 2.4rem;
    margin-bottom: 2.8rem;
+   transition: background-color .3s linear;
 }
 
 .banner div {
@@ -36,11 +39,42 @@
    color: #0c4dde;
    margin-bottom: 0.4rem;
    font-weight: 600;
+   transition: color .3s linear;
 }
 
 
 .banner p {
    color: rgba(0, 0, 0, .7);
+   font-weight: 500;
+   font-size: 1.6rem;
+   line-height: 2.4rem;
+   transition: color .3s linear;
+}
+
+
+/* ======dark */
+
+
+.about.dark>p {
+   color: #fff;
+}
+
+
+.banner.dark {
+   background-color: #3e3e3e;
+}
+
+.banner.dark h3 {
+   font-size: 1.8rem;
+   line-height: 2.4rem;
+   color: #fff;
+   margin-bottom: 0.4rem;
+   font-weight: 600;
+}
+
+
+.banner.dark p {
+   color: #fff;
    font-weight: 500;
    font-size: 1.6rem;
    line-height: 2.4rem;

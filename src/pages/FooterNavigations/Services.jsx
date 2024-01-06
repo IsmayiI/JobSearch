@@ -1,28 +1,34 @@
 import { Link } from 'react-router-dom'
 import ScrollBar from '../../components/UI/ScrollBar'
 import styles from './Services.module.css'
+import { useContext } from 'react'
+import ModeContext from '../../context/ModeContext'
 
 const Services = () => {
+   const { isLight } = useContext(ModeContext)
+
+   const modeStyle = isLight ? '' : styles.dark
+
    return (
       <ScrollBar>
-         <div className={styles.services}>
+         <div className={`${styles.services} ${modeStyle}`}>
             <h2>Services</h2>
             <ul>
-               <li className={styles.item}>
+               <li className={`${styles.item} ${modeStyle}`}>
                   <div>
                      <h3>Single vacancy</h3>
                      <p>Duration of one month</p>
                   </div>
                   <p>25 AZN</p>
                </li>
-               <li className={styles.item}>
+               <li className={`${styles.item} ${modeStyle}`}>
                   <div>
                      <h3>5 and more posts</h3>
                      <p>20% of discount is applicable for 5 and more posts in one day</p>
                   </div>
                   <p>20 AZN (5x)</p>
                </li>
-               <li className={`${styles.item} ${styles.premium}`}>
+               <li className={`${styles.item} ${styles.premium} ${modeStyle}`}>
                   <div>
                      <h3>Premium</h3>
                      <p>
@@ -32,7 +38,7 @@ const Services = () => {
                   <p>40 AZN</p>
                </li>
             </ul>
-            <div className={styles.info}><h2>Posting Job announcement</h2>
+            <div className={`${styles.info} ${modeStyle}`}><h2>Posting Job announcement</h2>
 
                <p>To post a Job Announcement please send it via e-mail <br /> to <a href="mailto:info@jobsearch.az">info@jobsearch.az</a> preferably in-text only format (MS Word). We reserve the right to correct minor grammatical errors and slightly reformat the text to make it more reader-friendly.</p>
 

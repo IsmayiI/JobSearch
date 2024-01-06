@@ -20,16 +20,19 @@ const createDeadline = (date) => {
 }
 
 
-const VacancyInfo = () => {
+const VacancyInfo = ({ isLight }) => {
 
    const { vacancy } = useContext(CompaniesContext)
    const { name, created_at, industry } = vacancy
+
+   const modeStyle = isLight ? '' : styles.dark
+
 
 
    const deadline = createDeadline(created_at)
 
    return (
-      <div className={styles.information}>
+      <div className={`${styles.information} ${modeStyle}`}>
          <h1>{name}</h1>
          <div>
             <Clock />

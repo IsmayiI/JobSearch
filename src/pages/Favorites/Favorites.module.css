@@ -1,18 +1,15 @@
-.favorites {
-   border-left: 1px solid #eaeaea;
-   height: 100vh;
-   transition: .3s linear;
-}
+.favorites {}
 
-.favorites.dark {
-   border-left: 1px solid rgba(255, 255, 255, .2);
-}
 
 .favorites>h2 {
    font-size: 2rem;
    font-weight: 500;
    padding: 2rem 1.5rem;
+}
+
+.favorites .title {
    border-bottom: 1px solid #eaeaea;
+   transition: .3s linear;
 }
 
 .content {
@@ -32,7 +29,7 @@
 
 .content a {
    display: inline-block;
-   border-color: rgba(12, 77, 222, .05);
+   border: 1px solid rgba(12, 77, 222, .05);
    background: rgba(12, 77, 222, .05);
    border-radius: .5rem;
    margin-top: 0.4rem;
@@ -56,10 +53,38 @@
    background: #fafafa;
    border-radius: 50%;
    margin: 0 auto 1.6rem;
+   transition: .3s linear;
 }
 
 .image svg {
    width: 2.7rem;
    height: 2.7rem;
    fill: #cfcfcf;
+}
+
+
+
+/* ===============dark */
+
+.favorites.dark .title {
+   border-bottom: 1px solid rgba(255, 255, 255, .2);
+}
+
+.content.dark a {
+   border: 1px solid rgba(255, 255, 255, .2);
+   background: transparent;
+   color: #fff;
+}
+
+.content.dark a:hover {
+   background-color: #fff;
+   color: #000;
+}
+
+.image.dark {
+   background: #3e3e3e;
+}
+
+.image.dark svg {
+   fill: rgb(255, 255, 255);
 }

@@ -9,6 +9,7 @@ import { Outlet, useParams } from 'react-router-dom'
 import ScrollBar from '../../UI/ScrollBar'
 import { useContext, useEffect, useState } from 'react'
 import CompaniesContext from '../../../context/CompaniesContext'
+import ModeContext from '../../../context/ModeContext'
 
 
 const VacancyDetail = () => {
@@ -16,6 +17,10 @@ const VacancyDetail = () => {
 
    const { slug } = useParams()
 
+
+   const { isLight } = useContext(ModeContext)
+
+   const modeStyle = isLight ? '' : styles.dark
 
 
    useEffect(() => {
@@ -38,7 +43,7 @@ const VacancyDetail = () => {
 
    return (
       <ScrollBar>
-         <div className={styles.detail}>
+         <div className={`${styles.detail} ${modeStyle}`}>
             <div className={styles.header}>
                <Subsection
                   titleLit={company_name}
@@ -55,8 +60,8 @@ const VacancyDetail = () => {
                   </div>
                </Subsection>
             </div>
-            <VacancyInfo />
-            <VacancyNavigation />
+            <VacancyInfo isLight={isLight} />
+            <VacancyNavigation isLight={isLight} />
          </div>
          <Outlet />
       </ScrollBar>

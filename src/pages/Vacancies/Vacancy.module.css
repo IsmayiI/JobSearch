@@ -42,7 +42,7 @@
    height: 10px;
    margin: 0 1rem 0 .4rem;
    background-color: rgba(0, 0, 0, 0.3);
-   transition: .3s linear;
+   transition: background-color .3s linear;
 }
 
 .view svg {
@@ -52,7 +52,7 @@
 .view svg circle,
 .view svg path {
    stroke: rgba(0, 0, 0, 0.5);
-   transition: .3s linear;
+   transition: stroke .3s linear;
 }
 
 
@@ -63,7 +63,7 @@
    fill: white;
    stroke: #ff8686;
    cursor: pointer;
-   transition: .2s;
+   transition: fill .2s linear;
 }
 
 .like svg:hover {
@@ -71,7 +71,6 @@
 }
 
 .active svg {
-   transition: .2s;
    fill: #ff8686;
 }
 
@@ -115,7 +114,7 @@
 .like.dark svg {
    fill: #262626;
    stroke: #ff8686;
-   transition: .2s;
+   transition: fill .2s linear;
 }
 
 .like.dark svg:hover {

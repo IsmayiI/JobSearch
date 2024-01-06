@@ -7,4 +7,6 @@
    background: #fafafa;
 }
 
-.count {}
+.company.dark:hover {
+   background: rgba(111, 117, 126, .1);
+}

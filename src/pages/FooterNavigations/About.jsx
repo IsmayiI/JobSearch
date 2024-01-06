@@ -1,12 +1,20 @@
+import { useContext } from 'react'
 import ScrollBar from '../../components/UI/ScrollBar'
 import styles from './About.module.css'
+import ModeContext from '../../context/ModeContext'
 
 const About = () => {
+
+   const { isLight } = useContext(ModeContext)
+
+   const modeStyle = isLight ? '' : styles.dark
+
+
    return (
       <ScrollBar>
-         <div className={styles.about}>
+         <div className={`${styles.about} ${modeStyle}`}>
             <h2>About</h2>
-            <div className={styles.banner}>
+            <div className={`${styles.banner} ${modeStyle}`}>
                <div>
                   <h3>JobSearch.az</h3>
                   <p>is all about job opportunities in Azerbaijan.</p>

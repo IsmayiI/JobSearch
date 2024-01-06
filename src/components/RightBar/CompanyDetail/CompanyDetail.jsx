@@ -3,11 +3,17 @@ import styles from './CompanyDetail.module.css'
 import ScrollBar from '../../UI/ScrollBar'
 import NavigationLinks from '../../UI/NavigationLinks'
 import { NavLink, Outlet, useParams } from 'react-router-dom'
-import { useContext, useEffect, useState } from 'react'
+import { useContext, useEffect } from 'react'
 import CompaniesContext from '../../../context/CompaniesContext'
+import ModeContext from '../../../context/ModeContext'
 
 const CompanyDetail = () => {
    const setActiveStyle = ({ isActive }) => isActive ? styles.active : ''
+
+   const { isLight } = useContext(ModeContext)
+
+   const modeStyle = isLight ? '' : styles.dark
+
 
    const { slug } = useParams()
    const { company, fetchSlugCompanyData } = useContext(CompaniesContext)
@@ -33,16 +39,16 @@ const CompanyDetail = () => {
          <div className={styles.detail}>
             <div className={styles.head}>
                <img src={image} alt={name} />
-               <div className={styles.info}>
+               <div className={`${styles.info} ${modeStyle}`}>
                   <h3>{name}</h3>
                   <a href="#">{subtitle}</a>
                </div>
             </div>
             <NavigationLinks>
-               <li className={styles.item}>
+               <li className={`${styles.item} ${modeStyle}`}>
                   <NavLink to='about' className={setActiveStyle}>About company</NavLink>
                </li>
-               <li className={styles.item}>
+               <li className={`${styles.item} ${modeStyle}`}>
                   <NavLink to='vacancies' className={setActiveStyle}>Latest vacancies</NavLink>
                </li>
             </NavigationLinks>

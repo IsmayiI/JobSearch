@@ -2,17 +2,20 @@
    padding: 4rem 3.2rem;
 }
 
+
+
 .services h2 {
    font-size: 2rem;
    font-weight: 500;
    margin: 4rem 0 1.6rem;
+   transition: color .3s linear;
+
 }
 
 .services>h2 {
    margin: 0 0 2rem;
 }
 
-.services ul {}
 
 .item {
    display: flex;
@@ -23,18 +26,22 @@
    border-radius: 4px;
    margin-bottom: 0.8rem;
    padding: 1.2rem 1.6rem;
+   transition: border .3s linear;
+
 }
 
 .item h3 {
    font-size: 1.5rem;
    font-weight: 500;
    margin-bottom: 0.2rem;
+   transition: color .3s linear;
 }
 
 .item div p {
    color: #4c4c4c;
    font-size: 1.3rem;
    line-height: 2rem;
+   transition: color .3s linear;
 }
 
 .item>p {
@@ -44,6 +51,8 @@
    letter-spacing: -.02em;
    text-align: right;
    font-weight: 600;
+   transition: color .3s linear;
+
 }
 
 .premium {
@@ -64,6 +73,8 @@
    letter-spacing: -.02em;
    line-height: 1.1rem;
    padding: 0.3rem 1.1rem;
+   transition: color .3s linear, background-color .3s linear;
+
 
 }
 
@@ -71,15 +82,50 @@
    line-height: 1.5;
    color: rgba(0, 0, 0, .7);
    margin-bottom: 1.2rem;
+   transition: color .3s linear;
+
+
 }
 
 .info a {
    display: inline-block;
    color: #0c4dde;
    border-bottom: 1px solid #0c4dde;
-   transition: .3s linear;
+   transition: color .3s linear, border-bottom .3s linear;
 }
 
 .info a:hover {
    border-bottom: 1px solid transparent;
+}
+
+
+/* ============dark */
+
+
+.item.dark {
+   border: 1px solid rgba(255, 255, 255, .2);
+}
+
+
+.item.dark div p {
+   color: #fff;
+}
+
+.item.dark>p {
+   color: #fff;
+}
+
+
+.premium.dark::after {
+   background-color: #aaf674;
+   color: #fff;
+}
+
+.info.dark p {
+   color: #fff;
+}
+
+.info.dark a {
+   color: #fff;
+   border-bottom: 1px solid rgba(255, 255, 255, .2);
 }

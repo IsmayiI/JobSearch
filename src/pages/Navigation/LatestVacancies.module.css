@@ -1,3 +1,8 @@
 .vacancies a:first-child>div {
    border-top: 1px solid #eaeaea;
+   transition: .3s linear;
+}
+
+.vacancies.dark a:first-child>div {
+   border-top: 1px solid rgba(255, 255, 255, .2);
 }

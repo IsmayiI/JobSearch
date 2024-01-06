@@ -3,6 +3,8 @@
 }
 
 
+
+
 /* ========================Header */
 
 
@@ -44,6 +46,7 @@
 .view svg circle,
 .view svg path {
    stroke: rgba(0, 0, 0, 0.5);
+   transition: .3s linear;
 }
 
 
@@ -63,6 +66,32 @@
 }
 
 .active svg {
+   cursor: pointer;
+   transition: .2s;
+   fill: #ff8686;
+}
+
+
+/* ===============dark */
+
+.detail.dark .view svg circle,
+.detail.dark .view svg path {
+   stroke: rgba(255, 255, 255, .5);
+}
+
+
+.detail.dark .like svg {
+   fill: rgb(38, 38, 38);
+   stroke: #ff8686;
+   cursor: pointer;
+   transition: .2s;
+}
+
+.detail.dark .like svg:hover {
+   fill: #ff8686;
+}
+
+.detail.dark .active svg {
    cursor: pointer;
    transition: .2s;
    fill: #ff8686;

@@ -5,11 +5,13 @@ import Subsection from "../../components/UI/Subsection"
 import { createDateString } from "../../utils/utils"
 import styles from './Vacancy.module.css'
 import CompaniesContext from "../../context/CompaniesContext"
+import ModeContext from "../../context/ModeContext"
 
 
-const Vacancy = ({ img, title, subtitle, view, created_at, like, id, isLight }) => {
+const Vacancy = ({ img, title, subtitle, view, created_at, like, id }) => {
    const { changeLikeVacancy } = useContext(CompaniesContext)
 
+   const { isLight } = useContext(ModeContext)
 
    const clickHandler = () => {
       changeLikeVacancy(id, like)

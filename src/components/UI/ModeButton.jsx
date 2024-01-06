@@ -10,9 +10,6 @@ const ModeButton = () => {
 
    const { isLight, onToogleMode } = useContext(ModeContext)
 
-
-   console.log(isLight)
-
    const modeStyle = isLight ? styles.light : styles.dark
 
    return (

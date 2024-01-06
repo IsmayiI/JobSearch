@@ -2,6 +2,8 @@
    padding: 4rem 3.2rem;
 }
 
+
+
 .contact h2 {
    font-size: 2rem;
    font-weight: 500;
@@ -9,10 +11,6 @@
 }
 
 .item {
-   /* display: flex;
-   justify-content: start;
-   align-items: start;
-   flex-wrap: wrap; */
    display: grid;
    grid-template-columns: 16rem 1fr;
    grid-template-areas:
@@ -50,4 +48,16 @@
    grid-area: third;
    border-radius: 1rem;
    margin-top: 2.4rem;
+}
+
+
+/* ==========dark */
+
+
+.item.dark {
+   border-bottom: 1px solid rgba(255, 255, 255, .2);
+}
+
+.item.dark a {
+   color: #fff;
 }

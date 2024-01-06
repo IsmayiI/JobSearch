@@ -1,9 +1,9 @@
 .nav {
    border-bottom: 1px solid #dee2e6;
+   transition: border-bottom .3s linear;
 }
 
 .nav ul {
-   /* padding: 0 4rem; */
    width: 100%;
    display: flex;
    justify-content: start;
@@ -17,13 +17,20 @@
    margin-right: 2rem;
    color: inherit;
    border-bottom: 3px solid transparent;
-   transition: .3s linear;
+   transition: color .3s linear;
 }
 
 .nav li a:hover {
    color: #0c4dde;
 }
 
-/* .nav li .active {
-   border-bottom: 3px solid #0c4dde;
-} */
+
+/* ============dark */
+
+.nav.dark {
+   border-bottom: 1px solid rgba(255, 255, 255, .2);
+}
+
+.nav.dark li a:hover {
+   color: inherit;
+}

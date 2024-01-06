@@ -15,19 +15,22 @@ const Favorites = () => {
 
 
    const favoritesContent = (
-      <div className={styles.content}>
-         <div className={styles.image}>
-            <Heart />
+      <>
+         <div className={`${styles.content} ${modeStyle}`}>
+            <div className={`${styles.image} ${modeStyle}`}>
+               <Heart />
+            </div>
+            <h3>You do not have any favorite vacancies</h3>
+            <Link to='/vacancies'>View vacancies</Link>
          </div>
-         <h3>You do not have any favorite vacancies</h3>
-         <Link to='/vacancies'>View vacancies</Link>
-      </div>
+      </>
+
    )
 
    return (
       <ScrollBar>
          <div className={`${styles.favorites} ${modeStyle}`}>
-            <h2>My favorite vacancies</h2>
+            <h2 className={favorites.length && styles.title}>My favorite vacancies</h2>
             {favorites.length === 0 && favoritesContent}
             {favorites.map(vacancy => (
                <Link to={`/vacancies/${vacancy.slug}`} key={vacancy.id}>

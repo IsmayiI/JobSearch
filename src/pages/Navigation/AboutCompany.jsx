@@ -2,14 +2,19 @@ import styles from './AboutCompany.module.css'
 import mapImg from '../../assets/imgs/map.webp'
 import { useContext } from 'react'
 import CompaniesContext from '../../context/CompaniesContext'
+import ModeContext from '../../context/ModeContext'
 
 const AboutCompany = () => {
 
    const { company } = useContext(CompaniesContext)
+   const { isLight } = useContext(ModeContext)
    const { description, location, phone, website } = company
 
+   const modeStyle = isLight ? '' : styles.dark
+
+
    return (
-      <div className={styles.about}>
+      <div className={`${styles.about} ${modeStyle}`}>
          <h4>About</h4>
          <p>
             {description}

@@ -5,6 +5,7 @@
 .about h4 {
    font-weight: 500;
    margin-bottom: 2rem;
+   transition: color .3s linear;
 }
 
 .about p {
@@ -12,6 +13,7 @@
    margin-bottom: 2rem;
    color: rgba(0, 0, 0, .7);
    line-height: 1.5;
+   transition: color .3s linear;
 }
 
 .info {
@@ -45,4 +47,17 @@
 
 .website {
    border-bottom: 1px solid #7f7f7f;
+   transition: .3s linear;
+
+}
+
+
+/* ================dark */
+
+.about.dark p {
+   color: #fff;
+}
+
+.about.dark .website {
+   border-bottom: 1px solid rgba(255, 255, 255, .2);
 }

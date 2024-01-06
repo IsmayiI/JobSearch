@@ -1,9 +1,0 @@
-.companies {
-   border-left: 1px solid #eaeaea;
-   height: 100vh;
-   transition: .3s linear;
-}
-
-.companies.dark {
-   border-left: 1px solid rgba(255, 255, 255, .2);
-}

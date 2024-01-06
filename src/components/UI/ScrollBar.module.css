@@ -1,6 +1,8 @@
 .scrollBar {
+   border-left: 1px solid #eaeaea;
    height: 100vh;
    overflow-y: auto;
+   transition: border-left .3s linear;
 }
 
 
@@ -20,6 +22,10 @@
 
 
 /* ========Dark */
+
+.scrollBar.dark {
+   border-left: 1px solid rgba(255, 255, 255, .2);
+}
 
 .scrollBar.dark::-webkit-scrollbar-track {
    background-color: #242424;

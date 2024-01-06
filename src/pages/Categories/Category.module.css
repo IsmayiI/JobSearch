@@ -7,4 +7,6 @@
    background: #fafafa;
 }
 
-.count {}
+.category.dark:hover {
+   background: rgba(111, 117, 126, .1);
+}
