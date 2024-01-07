@@ -1,4 +1,5 @@
-import React, { useEffect, useReducer } from 'react'
+import React, { useCallback, useEffect, useReducer } from 'react'
+import { useParams } from 'react-router-dom'
 
 const defaultState = {
    companies: [],
@@ -20,17 +21,22 @@ const CompaniesContext = React.createContext(defaultState)
 
 const reducerFunc = (state, action) => {
    switch (action.type) {
-      case 'SET COMPANIES':
+      case 'SET COMPANIES': {
          let updateCompanies
          let updateCompany = state.company
          if (state.vacancies.length) {
             updateCompanies = action.companies.map(company => {
-               const matchingVacancies = state.vacancies.filter(vacancy => vacancy.company_name === company.name);
-               const latestVacancies = company.latest_vacancies ? [...company.latest_vacancies, ...matchingVacancies] : matchingVacancies;
+               const matchingLatestVacancies = state.vacancies.filter(vacancy => vacancy.company_name === company.name);
+               const latestVacancies = company.latest_vacancies ? [...company.latest_vacancies, ...matchingLatestVacancies] : matchingLatestVacancies;
+
                return { ...company, latest_vacancies: latestVacancies };
             });
+         }
+
+         if (state.company) {
             updateCompany = updateCompanies.find(company => company.id === state.company.id)
          }
+
 
          return (
             {
@@ -39,6 +45,7 @@ const reducerFunc = (state, action) => {
                company: updateCompany
             }
          )
+      }
 
 
       case 'SET ACTIVE COMPANY':
@@ -70,6 +77,7 @@ const reducerFunc = (state, action) => {
       case 'SET SLUG VACANCY': {
          const updateVacancy = state.vacancies.find(vacancy => vacancy.slug === action.slug)
          const updateCompany = state.companies.find(company => updateVacancy.company_id === company.id)
+
          return (
             {
                ...state,
@@ -133,7 +141,7 @@ const reducerFunc = (state, action) => {
                ...state,
                categories: updateCategories || action.categories
             }
-         )
+         );
 
    }
 
@@ -149,6 +157,7 @@ export const CompaniesContextProvider = (props) => {
    const [state, dispatchState] = useReducer(reducerFunc, defaultState)
 
    const { companies, company, vacancies, vacancy, view, favorites, categories } = state
+
 
    useEffect(() => {
       fetchData()
@@ -166,6 +175,7 @@ export const CompaniesContextProvider = (props) => {
 
    const setActiveCompany = (slug) => {
       dispatchState({ type: 'SET ACTIVE COMPANY', slug })
+
    }
 
    const fetchSlugCompanyData = async (slug) => {
@@ -190,7 +200,6 @@ export const CompaniesContextProvider = (props) => {
 
    const fetchSlugVacancyData = async (slug) => {
       const data = await fetchData()
-
       dispatchState({ type: 'SET SLUG VACANCY', slug })
    }
 
@@ -223,7 +232,7 @@ export const CompaniesContextProvider = (props) => {
          setActiveCompany,
          changeViewVacancy,
          changeLikeVacancy,
-         view
+         view,
       }}>
          {props.children}
       </CompaniesContext.Provider>

@@ -3,10 +3,11 @@ import Vacancy from '../Vacancies/Vacancy'
 import styles from './LatestVacancies.module.css'
 import CompaniesContext from '../../context/CompaniesContext'
 import ScrollBar from '../../components/UI/ScrollBar'
-import { Link, Outlet } from 'react-router-dom'
+import { Link, Outlet, useParams } from 'react-router-dom'
 import ModeContext from '../../context/ModeContext'
 
-const LatestVacancies = () => {
+const OtherVacancies = () => {
+   const { slug } = useParams()
 
    const { company } = useContext(CompaniesContext)
    const { isLight } = useContext(ModeContext)
@@ -20,12 +21,14 @@ const LatestVacancies = () => {
       return <div>loading</div>
    }
 
+   const otherVacancies = latest_vacancies.filter(vacancy => vacancy.slug !== slug)
+
 
    return (
       <>
          <ScrollBar>
             <div className={`${styles.vacancies} ${modeStyle}`}>
-               {latest_vacancies.map(vacancy => (
+               {otherVacancies.map(vacancy => (
                   <Link to={`/vacancies/${vacancy.slug}`} key={vacancy.id}>
                      <Vacancy
                         title={vacancy.name}
@@ -44,4 +47,4 @@ const LatestVacancies = () => {
    )
 }
 
-export default LatestVacancies
+export default OtherVacancies

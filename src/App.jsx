@@ -14,6 +14,7 @@ import LatestVacancies from './pages/Navigation/LatestVacancies'
 import About from './pages/FooterNavigations/About'
 import Services from './pages/FooterNavigations/Services'
 import ContactUs from './pages/FooterNavigations/ContactUs'
+import OtherVacancies from './pages/Navigation/OtherVacancies'
 
 
 function App() {
@@ -30,7 +31,7 @@ function App() {
                      <Route index element={<Navigate to='description' />} />
                      <Route path='description' element={<JobDescription />} />
                      <Route path='about' element={<AboutCompany />} />
-                     <Route path='vacancies' element={<LatestVacancies />} />
+                     <Route path='vacancies' element={<OtherVacancies />} />
                   </Route>
                </Route>
 

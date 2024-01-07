@@ -13,7 +13,7 @@ import ModeContext from '../../../context/ModeContext'
 
 
 const VacancyDetail = () => {
-   const { view, vacancy, vacancies, fetchSlugVacancyData, changeLikeVacancy } = useContext(CompaniesContext)
+   const { view, vacancy, fetchSlugVacancyData, changeLikeVacancy } = useContext(CompaniesContext)
 
 
    const { slug } = useParams()
@@ -31,6 +31,7 @@ const VacancyDetail = () => {
    if (!vacancy) {
       return <h1>Loading</h1>
    }
+
 
 
    const { id, image, company_name, like } = vacancy
@@ -62,7 +63,7 @@ const VacancyDetail = () => {
                </Subsection>
             </div>
             <VacancyInfo isLight={isLight} />
-            <VacancyNavigation isLight={isLight} />
+            <VacancyNavigation slug={slug} isLight={isLight} />
          </div>
          <Outlet />
       </ScrollBar>
