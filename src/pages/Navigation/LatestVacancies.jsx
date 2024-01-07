@@ -20,6 +20,7 @@ const LatestVacancies = () => {
       return <div>loading</div>
    }
 
+
    return (
       <>
          <ScrollBar>
@@ -31,7 +32,9 @@ const LatestVacancies = () => {
                         subtitle={vacancy.company_name}
                         view={vacancy.view}
                         created_at={vacancy.created_at}
-                        isLight={isLight} />
+                        like={vacancy.like}
+                        isLight={isLight}
+                        id={vacancy.id} />
                   </Link>
                ))}
             </div>

@@ -20,8 +20,6 @@ const Vacancy = ({ img, title, subtitle, view, created_at, like, id }) => {
    const activeLikeStyle = like ? styles.active : styles.like
    const modeStyle = isLight ? '' : styles.dark
 
-
-
    const date = createDateString(created_at)
 
    return (

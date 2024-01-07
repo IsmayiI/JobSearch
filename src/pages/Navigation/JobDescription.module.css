@@ -1,5 +1,6 @@
 .description {
    padding: 2.5rem 4rem;
+   transition: color .3s linear;
 }
 
 .description h4 {
@@ -11,4 +12,5 @@
    white-space: pre-line;
    line-height: 1.5;
    margin-bottom: 2rem;
+
 }
