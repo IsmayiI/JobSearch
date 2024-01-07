@@ -23,7 +23,7 @@ const VacancyNavigation = ({ isLight, slug }) => {
          <li className={`${styles.item} ${modeStyle}`}>
             <NavLink to='about' className={setActiveStyle}>About company</NavLink>
          </li>
-         {otherVacancies.length !== 0 && <li className={`${styles.item} ${modeStyle}`}>
+         {otherVacancies?.length !== 0 && <li className={`${styles.item} ${modeStyle}`}>
             <NavLink to='vacancies' className={setActiveStyle}>Other vacancies</NavLink>
          </li>}
       </NavigationLinks>
