@@ -22,17 +22,21 @@ const reducerFunc = (state, action) => {
    switch (action.type) {
       case 'SET COMPANIES':
          let updateCompanies
+         let updateCompany = state.company
          if (state.vacancies.length) {
             updateCompanies = action.companies.map(company => {
                const matchingVacancies = state.vacancies.filter(vacancy => vacancy.company_name === company.name);
                const latestVacancies = company.latest_vacancies ? [...company.latest_vacancies, ...matchingVacancies] : matchingVacancies;
                return { ...company, latest_vacancies: latestVacancies };
             });
+            updateCompany = updateCompanies.find(company => company.id === state.company.id)
          }
+
          return (
             {
                ...state,
-               companies: updateCompanies ? updateCompanies : action.companies
+               companies: updateCompanies ? updateCompanies : action.companies,
+               company: updateCompany
             }
          )
 
@@ -63,7 +67,7 @@ const reducerFunc = (state, action) => {
             }
          )
 
-      case 'SET SLUG VACANCY':
+      case 'SET SLUG VACANCY': {
          const updateVacancy = state.vacancies.find(vacancy => vacancy.slug === action.slug)
          const updateCompany = state.companies.find(company => updateVacancy.company_id === company.id)
          return (
@@ -74,6 +78,7 @@ const reducerFunc = (state, action) => {
                view: updateVacancy.view
             }
          )
+      }
       case 'CHANGE VIEW':
          return (
             {
@@ -91,13 +96,22 @@ const reducerFunc = (state, action) => {
             }
          )
 
-      case 'CHANGE LIKE VACANCY':
+      case 'CHANGE LIKE VACANCY': {
+         const updateVacancies = state.vacancies.map(vacancy => {
+            if (vacancy.id === action.id) {
+               return { ...vacancy, like: action.like }
+            }
+            return vacancy
+         })
+         const updateVacancy = updateVacancies.find(vacancy => state.vacancy.id === vacancy.id)
          return (
             {
                ...state,
-               vacancy: { ...state.vacancy, like: !state.vacancy.like }
+               vacancies: updateVacancies,
+               vacancy: updateVacancy
             }
          )
+      }
 
       case 'SET CATEGORIES':
          let updateCategories
@@ -161,7 +175,7 @@ export const CompaniesContextProvider = (props) => {
 
 
    const changeViewVacancy = async (id, view) => {
-      const res = await fetch(`https://react-http-7baee-default-rtdb.firebaseio.com/vacancies/${--id}.json`, {
+      const res = await fetch(`https://react-http-7baee-default-rtdb.firebaseio.com/vacancies/${id - 1}.json`, {
          method: 'PATCH',
          headers: {
             'Content-Type': 'application/json',
@@ -181,7 +195,7 @@ export const CompaniesContextProvider = (props) => {
    }
 
    const changeLikeVacancy = async (id, like) => {
-      const res = await fetch(`https://react-http-7baee-default-rtdb.firebaseio.com/vacancies/${--id}.json`, {
+      const res = await fetch(`https://react-http-7baee-default-rtdb.firebaseio.com/vacancies/${id - 1}.json`, {
          method: 'PATCH',
          headers: {
             'Content-Type': 'application/json',
@@ -189,7 +203,7 @@ export const CompaniesContextProvider = (props) => {
          body: JSON.stringify({ like: !like })
       })
       const data = await res.json()
-      dispatchState({ type: 'CHANGE LIKE VACANCY', like: data.like })
+      dispatchState({ type: 'CHANGE LIKE VACANCY', like: data.like, id })
       fetchData()
    }
 

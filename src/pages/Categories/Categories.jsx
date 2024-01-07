@@ -13,7 +13,7 @@ const Categories = () => {
       <>
          <ScrollBar>
             <div>
-               {categories.map(category => <Link to='.'><Category {...category} /></Link>)}
+               {categories.map(category => <Link key={category.id} to='.'><Category {...category} /></Link>)}
             </div>
          </ScrollBar>
          <Outlet />

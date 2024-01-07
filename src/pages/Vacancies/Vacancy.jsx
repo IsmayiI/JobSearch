@@ -13,7 +13,9 @@ const Vacancy = ({ img, title, subtitle, view, created_at, like, id }) => {
 
    const { isLight } = useContext(ModeContext)
 
-   const clickHandler = () => {
+   const clickHandler = (e) => {
+      e.preventDefault()
+      e.stopPropagation()
       changeLikeVacancy(id, like)
    }
 

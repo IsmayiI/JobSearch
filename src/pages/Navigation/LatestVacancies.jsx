@@ -1,9 +1,9 @@
-import { useContext } from 'react'
+import { useContext, useEffect } from 'react'
 import Vacancy from '../Vacancies/Vacancy'
 import styles from './LatestVacancies.module.css'
 import CompaniesContext from '../../context/CompaniesContext'
 import ScrollBar from '../../components/UI/ScrollBar'
-import { Link, Outlet } from 'react-router-dom'
+import { Link, Outlet, useParams } from 'react-router-dom'
 import ModeContext from '../../context/ModeContext'
 
 const LatestVacancies = () => {
@@ -13,8 +13,8 @@ const LatestVacancies = () => {
 
    const modeStyle = isLight ? '' : styles.dark
 
-
    const { latest_vacancies } = company
+
 
    if (!latest_vacancies) {
       return <div>loading</div>

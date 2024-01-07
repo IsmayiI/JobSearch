@@ -14,10 +14,10 @@ const ModeButton = () => {
 
    return (
       <div className={`${styles.mode} ${modeStyle}`}>
-         <button onClick={onToogleMode}>
+         <button onClick={() => onToogleMode(true)}>
             <SunIcon />
          </button>
-         <button onClick={onToogleMode}>
+         <button onClick={() => onToogleMode(false)}>
             <MoonIcon />
          </button>
       </div>

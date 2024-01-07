@@ -26,8 +26,8 @@ export const ModeContextProvider = (props) => {
    }, [isLight])
 
 
-   const onToogleMode = () => {
-      setIsLight(prev => !prev)
+   const onToogleMode = (value) => {
+      setIsLight(value)
    }
 
 
