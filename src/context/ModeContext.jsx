@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 
 const ModeContext = React.createContext({
    isLight: true,
@@ -8,19 +8,29 @@ const ModeContext = React.createContext({
 
 export const ModeContextProvider = (props) => {
 
-   const [isLight, setIsLight] = useState(true)
+
+   const defaultOrStorage = JSON.parse(localStorage.getItem('isLight')) ?? true
+
+   const [isLight, setIsLight] = useState(defaultOrStorage)
+
+
+   useEffect(() => {
+      if (isLight) {
+         document.body.style.cssText = `color: #000;
+             background-color: #fff;`
+      } else {
+         document.body.style.cssText = `color: #fff;
+             background-color: #262626`
+      }
+      localStorage.setItem('isLight', JSON.stringify(isLight))
+   }, [isLight])
+
 
    const onToogleMode = () => {
-      setIsLight(prevMode => !prevMode)
+      setIsLight(prev => !prev)
    }
 
-   if (isLight) {
-      document.body.style.cssText = `color: #000;
-       background-color: #fff;`
-   } else {
-      document.body.style.cssText = `color: #fff;
-       background-color: #262626`
-   }
+
 
    return (
       <ModeContext.Provider value={{
