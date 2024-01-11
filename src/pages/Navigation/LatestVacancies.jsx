@@ -11,6 +11,7 @@ const LatestVacancies = () => {
    const { company } = useContext(CompaniesContext)
    const { isLight } = useContext(ModeContext)
 
+
    const modeStyle = isLight ? '' : styles.dark
 
    const { latest_vacancies } = company

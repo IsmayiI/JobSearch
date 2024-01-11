@@ -61,3 +61,12 @@
 .about.dark .website {
    border-bottom: 1px solid rgba(255, 255, 255, .2);
 }
+
+
+/* ======================MEDIA */
+
+@media (max-width: 1260px) {
+   .about {
+      padding: 2.5rem 2rem;
+   }
+}

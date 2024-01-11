@@ -81,3 +81,13 @@
 .title.dark {
    color: white;
 }
+
+
+
+/* ======================MEDIA */
+
+@media (max-width: 1260px) {
+   .headers {
+      padding-left: 0.5rem;
+   }
+}

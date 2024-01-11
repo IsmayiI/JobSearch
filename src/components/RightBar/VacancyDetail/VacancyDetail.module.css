@@ -96,3 +96,14 @@
    transition: .2s;
    fill: #ff8686;
 }
+
+
+
+
+/* ======================MEDIA */
+
+@media (max-width: 1260px) {
+   .detail {
+      padding: 0 2rem;
+   }
+}

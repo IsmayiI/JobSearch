@@ -14,3 +14,12 @@
    margin-bottom: 2rem;
 
 }
+
+
+/* ======================MEDIA */
+
+@media (max-width: 1260px) {
+   .description {
+      padding: 2.5rem 2rem;
+   }
+}

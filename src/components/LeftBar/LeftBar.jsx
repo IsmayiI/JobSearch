@@ -1,4 +1,4 @@
-import { useContext } from 'react'
+import { useContext, useState } from 'react'
 import logoImg from '../../assets/imgs/logo.png'
 import ModeButton from '../UI/ModeButton'
 import ScrollBar from '../UI/ScrollBar'
@@ -10,6 +10,11 @@ import { Link } from 'react-router-dom'
 
 const LeftBar = () => {
    const { isLight } = useContext(ModeContext)
+   const [isSideBarOpen, setIsSideBarOpen] = useState(false)
+
+   const clickHandler = () => {
+      setIsSideBarOpen(prev => !prev)
+   }
 
 
    return (
@@ -19,9 +24,13 @@ const LeftBar = () => {
                <Link to='vacancies'>
                   <img src={logoImg} alt="logo" />
                </Link>
+               <div onClick={clickHandler} className={styles.burger}>
+                  <span></span>
+                  <span></span>
+               </div>
             </header>
             <main>
-               <Menu isLight={isLight} />
+               <Menu isToogleBar={clickHandler} isOpen={isSideBarOpen} isLight={isLight} />
                <div className={styles.action}>
                   <ModeButton />
                </div>

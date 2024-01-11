@@ -26,7 +26,7 @@ const VacancyDetail = () => {
 
    useEffect(() => {
       fetchSlugVacancyData(slug)
-   }, [])
+   }, [slug])
 
    if (!vacancy) {
       return <h1>Loading</h1>

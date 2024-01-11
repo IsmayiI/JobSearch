@@ -7,3 +7,15 @@
    background-color: blue;
    border: 2px solid black;
 }
+
+
+/*============= MEDIA =============== */
+
+
+
+@media (max-width: 1100px) {
+   .container {
+      grid-template-columns: 1fr;
+      grid-template-rows: repeat(2, 1fr);
+   }
+}

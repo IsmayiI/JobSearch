@@ -45,3 +45,13 @@ h5,
 h6 {
    line-height: 1.2;
 }
+
+/*============= MEDIA =============== */
+
+
+
+@media (max-width: 1260px) {
+   html {
+      font-size: 55%;
+   }
+}

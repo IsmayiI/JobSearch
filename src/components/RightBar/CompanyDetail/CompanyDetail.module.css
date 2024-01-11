@@ -4,8 +4,7 @@
 
 
 .head {
-   padding: 0 4rem;
-   margin: 4rem 0;
+   padding: 4rem 4rem;
    display: flex;
    justify-content: start;
    align-items: center;
@@ -72,4 +71,20 @@
 
 .item.dark .active {
    border-bottom: 3px solid rgba(255, 255, 255, .2);
+}
+
+
+
+
+/* ======================MEDIA */
+
+@media (max-width: 1260px) {
+   .head {
+      padding: 2rem 2rem;
+
+   }
+
+   .detail nav ul {
+      padding-left: 2rem;
+   }
 }

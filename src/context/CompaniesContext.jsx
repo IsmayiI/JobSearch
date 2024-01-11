@@ -111,7 +111,9 @@ const reducerFunc = (state, action) => {
             }
             return vacancy
          })
-         const updateVacancy = updateVacancies.find(vacancy => state.vacancy.id === vacancy.id)
+         const updateVacancy = updateVacancies.find(vacancy => {
+            return vacancy.id === state.vacancy?.id
+         })
          return (
             {
                ...state,

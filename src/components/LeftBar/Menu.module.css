@@ -3,15 +3,17 @@
    margin-bottom: 3.8rem;
 }
 
-.menu nav {
+
+.menu .nav {
    margin-bottom: 3.8rem;
 }
 
-.menu ul {
+.menu .nav ul {
    width: 100%;
 }
 
-.menu li a {
+.menu .nav li a,
+.subMenu .list li a {
    display: flex;
    align-items: center;
    padding: .9rem 1.5rem;
@@ -22,31 +24,34 @@
 }
 
 
-.menu li a:hover {
+.menu .nav li a:hover,
+.subMenu .list li a:hover {
    color: white;
    background-color: #0c4dde;
    transition: .3s linear;
 }
 
 
-.menu li a:hover>svg {
+.menu .nav li a:hover>svg,
+.subMenu .list li a:hover>svg {
    fill: white;
    transition: .3s linear;
 }
 
-.active {
+.menu .nav .active {
    color: white;
    background-color: #0c4dde;
 }
 
-.active svg {
-   fill: white !important;
+.menu .nav .active svg {
+   fill: white;
 }
 
 
 
 
-.menu svg {
+.menu .nav svg,
+.subMenu .list svg {
    display: inline-block;
    width: 2rem;
    height: 2rem;
@@ -55,7 +60,8 @@
    transition: .3s linear;
 }
 
-.menu.dark svg {
+.menu.dark .nav svg,
+.subMenu.dark .list svg {
    fill: white;
 }
 
@@ -72,7 +78,7 @@
 }
 
 
-.menu>span {
+.subMenu>span {
    font-weight: 400;
    color: rgba(0, 0, 0, .5);
    display: block;
@@ -81,6 +87,169 @@
    transition: .3s linear;
 }
 
-.menu.dark>span {
+.subMenu.dark>span {
    color: rgba(255, 255, 255, .5)
+}
+
+
+.subMenu.off {
+   opacity: 0;
+}
+
+.overlay {
+   position: fixed;
+   top: 0;
+   left: 0;
+   width: 100%;
+   height: 100%;
+   background: rgba(0, 0, 0, 0.2);
+   z-index: 10;
+}
+
+.close {
+   width: 20px;
+   height: 20px;
+   z-index: 16;
+   top: 19px;
+   right: 15px;
+   cursor: pointer;
+}
+
+.close::before {
+   content: '';
+   position: absolute;
+   width: 2px;
+   height: 20px;
+   background: #bbb;
+   transform: rotate(45deg);
+}
+
+.close::after {
+   content: '';
+   position: absolute;
+   width: 2px;
+   height: 20px;
+   background: #bbb;
+   transform: rotate(-45deg);
+}
+
+/*============= MEDIA =============== */
+
+
+@media (max-width: 1100px) {
+   .menu {
+      width: 100%;
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      z-index: 10;
+      background-color: #fff;
+      padding: 1.8rem 1.2rem 2.3rem;
+      border-top: 1px solid #bbb;
+      margin-bottom: 0;
+   }
+
+   .menu .nav {
+      margin-bottom: 0;
+   }
+
+   .menu .nav ul {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+   }
+
+   .menu .nav a {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-direction: column;
+      padding: 0;
+   }
+
+   .menu .nav svg {
+      margin: 0;
+      margin-bottom: .5rem;
+   }
+
+   .menu .nav li a:hover {
+      color: #0c4dde;
+      background-color: inherit;
+      transition: .3s linear;
+   }
+
+
+   .menu .nav li a:hover>svg {
+      fill: #0c4dde;
+      transition: .3s linear;
+   }
+
+   .menu .nav .active {
+      color: #0c4dde;
+      background-color: inherit;
+   }
+
+   .menu .nav .active svg {
+      fill: #0c4dde;
+   }
+
+   .subMenu {
+      position: fixed;
+      top: 0;
+      left: -250px;
+      width: 250px;
+      height: 100%;
+      background-color: #fff;
+      z-index: 20;
+      transition: .2s;
+
+      display: flex;
+      justify-content: space-between;
+      flex-direction: column;
+      font-size: 14px;
+      padding: 20px 15px;
+
+   }
+
+   .subMenu.active {
+      left: 0;
+   }
+
+   .subMenu .list svg {
+      width: 20px;
+      height: 20px;
+   }
+
+   .subMenu img {
+      width: 13rem;
+      margin: .5rem 0;
+   }
+
+   .subMenu header {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 35px;
+   }
+
+   .subMenu main>span {
+      display: block;
+      font-weight: 400;
+      color: rgba(0, 0, 0, .5);
+      line-height: 1.5;
+      transition: .3s linear;
+      margin-bottom: 9px;
+   }
+
+   .subMenu main .list {
+      margin-bottom: 35px;
+   }
+
+   .action {
+      margin-bottom: 2rem;
+   }
+
+   .count {
+      width: 16px;
+      height: 16px;
+   }
 }

@@ -1,9 +1,9 @@
-import { useContext } from 'react'
+import { useContext, useEffect } from 'react'
 import Vacancy from '../Vacancies/Vacancy'
 import styles from './LatestVacancies.module.css'
 import CompaniesContext from '../../context/CompaniesContext'
 import ScrollBar from '../../components/UI/ScrollBar'
-import { Link, Outlet, useParams } from 'react-router-dom'
+import { Link, Outlet, useNavigate, useParams } from 'react-router-dom'
 import ModeContext from '../../context/ModeContext'
 
 const OtherVacancies = () => {
@@ -11,6 +11,7 @@ const OtherVacancies = () => {
 
    const { company } = useContext(CompaniesContext)
    const { isLight } = useContext(ModeContext)
+
 
    const modeStyle = isLight ? '' : styles.dark
 
@@ -22,6 +23,7 @@ const OtherVacancies = () => {
    }
 
    const otherVacancies = latest_vacancies.filter(vacancy => vacancy.slug !== slug)
+
 
 
    return (
