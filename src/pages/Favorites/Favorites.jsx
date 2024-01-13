@@ -1,9 +1,9 @@
-import { useContext, useEffect, useState } from 'react'
+import { useContext } from 'react'
 import styles from './Favorites.module.css'
 import CompaniesContext from '../../context/CompaniesContext'
 import ScrollBar from '../../components/UI/ScrollBar'
 import Vacancy from '../Vacancies/Vacancy'
-import { Link, useNavigate } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 import Heart from '../../assets/icons/Heart'
 import ModeContext from '../../context/ModeContext'
 

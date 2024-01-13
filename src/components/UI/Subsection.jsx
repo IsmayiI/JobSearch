@@ -1,8 +1,11 @@
 import { useContext } from 'react'
 import ModeContext from '../../context/ModeContext'
 import styles from './Subsection.module.css'
+import { Link } from 'react-router-dom'
+import LeftSquare from '../../assets/icons/LeftSquare'
 
-const Subsection = ({ children, titleBig, titleLit, img, svg, rem }) => {
+
+const Subsection = ({ children, titleBig, titleLit, img, svg, rem, leftSquare = false }) => {
    const { isLight } = useContext(ModeContext)
 
    const modeStyle = isLight ? '' : styles.dark
@@ -24,6 +27,7 @@ const Subsection = ({ children, titleBig, titleLit, img, svg, rem }) => {
    return (
       <div className={`${styles.subsection} ${modeStyle}`}>
          <div className={styles.base}>
+            {leftSquare && <Link to="/vacancies" className={`${styles.leftSquare} ${modeStyle}`}><LeftSquare /></Link>}
             {imgContent || svgContent}
             <div className={!imgContent && !svgContent && styles.headers}>
                {titleBig && <h2 className={`${styles.title} ${modeStyle}`}>{titleBig}</h2>}

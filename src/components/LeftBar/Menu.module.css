@@ -252,4 +252,40 @@
       width: 16px;
       height: 16px;
    }
+
+
+
+
+   /* =======================dark */
+
+
+   .menu.dark {
+      background-color: #262626;
+      border-top: 1px solid rgba(255, 255, 255, .2);
+   }
+
+   .menu.dark .nav li a:hover {
+      color: #fff;
+   }
+
+
+   .menu.dark .nav li a:hover>svg {
+      fill: #fff;
+   }
+
+   .menu.dark .nav .active {
+      color: #fff;
+   }
+
+   .menu.dark .nav .active svg {
+      fill: #fff;
+   }
+
+   .subMenu.dark {
+      background-color: #262626;
+   }
+
+   .subMenu.dark main>span {
+      color: rgba(255, 255, 255, .5);
+   }
 }

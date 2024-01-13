@@ -1,7 +1,6 @@
 import styles from './VacancyDetail.module.css'
 import View from '../../../assets/icons/View'
 import Heart from '../../../assets/icons/Heart'
-
 import Subsection from '../../UI/Subsection'
 import VacancyInfo from './VacancyInfo'
 import VacancyNavigation from './VacancyNavigation'
@@ -48,6 +47,7 @@ const VacancyDetail = () => {
          <div className={`${styles.detail} ${modeStyle}`}>
             <div className={styles.header}>
                <Subsection
+                  leftSquare={true}
                   titleLit={company_name}
                   img={image}
                   rem={"2.8rem"}  >

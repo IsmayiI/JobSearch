@@ -15,6 +15,10 @@ const Menu = ({ isLight, isOpen, isToogleBar }) => {
    const { favorites } = useContext(CompaniesContext)
    const [width, setWidth] = useState(false)
 
+   useEffect(() => {
+      handleResize()
+   }, [])
+
 
    function handleResize() {
       const windowWidth = window.innerWidth;

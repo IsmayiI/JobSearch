@@ -16,11 +16,14 @@ const LeftBar = () => {
       setIsSideBarOpen(prev => !prev)
    }
 
+   const modeStyle = isLight ? '' : styles.dark
+
+
 
    return (
       <ScrollBar>
          <div className={styles.leftBar}>
-            <header className={styles.header}>
+            <header className={`${styles.header} ${modeStyle}`}>
                <Link to='vacancies'>
                   <img src={logoImg} alt="logo" />
                </Link>
@@ -35,7 +38,9 @@ const LeftBar = () => {
                   <ModeButton />
                </div>
             </main>
-            <Footer isLight={isLight} />
+            <div className={styles.footer}>
+               <Footer isLight={isLight} />
+            </div>
          </div>
       </ScrollBar>
    )

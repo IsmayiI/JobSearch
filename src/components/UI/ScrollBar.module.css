@@ -30,3 +30,14 @@
 .scrollBar.dark::-webkit-scrollbar-track {
    background-color: #242424;
 }
+
+
+/*============= MEDIA =============== */
+
+
+@media (max-width: 1100px) {
+   .scrollBar {
+      height: auto;
+      padding-bottom: 92px;
+   }
+}
