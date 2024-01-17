@@ -58,8 +58,16 @@ const reducerFunc = (state, action) => {
          )
 
 
-      case 'SET VACANCIES':
-         const updateVacancies = action.vacancies.map(vacancy => {
+      case 'SET VACANCIES': {
+         let updateVacancies = action.vacancies
+         if (state.categories.length) {
+            updateVacancies = action.vacancies.map(vacancy => {
+               const updateVacancy = state.categories.filter(category => vacancy.category_id === category.id)
+                  .map(category => ({ ...vacancy, industry: category.name }))
+               return updateVacancy[0]
+            })
+         }
+         updateVacancies = updateVacancies.map(vacancy => {
             for (let i = 0; i < state.companies.length; i++) {
                if (vacancy.company_id === state.companies[i].id) {
                   const updateSlug = `${state.companies[i].slug}-${vacancy.slug}`
@@ -67,12 +75,24 @@ const reducerFunc = (state, action) => {
                }
             }
          })
+
+
+         // const updateVacancies = action.vacancies.map(vacancy => {
+         //    for (let i = 0; i < state.companies.length; i++) {
+         //       if (vacancy.company_id === state.companies[i].id) {
+         //          const updateSlug = `${state.companies[i].slug}-${vacancy.slug}`
+         //          return { ...vacancy, image: state.companies[i].image, company_name: state.companies[i].name, slug: updateSlug }
+         //       }
+         //    }
+         // })
+
          return (
             {
                ...state,
                vacancies: updateVacancies
             }
          )
+      }
 
       case 'SET SLUG VACANCY': {
          const updateVacancy = state.vacancies.find(vacancy => vacancy.slug === action.slug)
@@ -114,6 +134,7 @@ const reducerFunc = (state, action) => {
          const updateVacancy = updateVacancies.find(vacancy => {
             return vacancy.id === state.vacancy?.id
          })
+
          return (
             {
                ...state,
@@ -123,28 +144,25 @@ const reducerFunc = (state, action) => {
          )
       }
 
-      case 'SET CATEGORIES':
-         let updateCategories
-         if (state.vacancies.length && state.companies.length) {
-            updateCategories = action.categories.map(category => {
-               for (let i = 0; i < state.vacancies.length; i++) {
-                  if (category.name === state.vacancies[i].industry) {
-                     const vacancies = action.categories.vacancies ? [...action.categories.vacancies, state.vacancies[i]] : [state.vacancies[i]]
-                     return { ...category, vacancies }
-                  }
-               }
-               return category
-            })
-
-         }
+      case 'SET CATEGORIES': {
+         let updateCategories = action.categories.map(category => {
+            const vacanciesBy = state.vacancies.filter(vacancy => vacancy.category_id === category.id)
+            console.log(state.companies)
+            if (state.companies.latest_vacancies?.length) {
+               const companiesBy = state.companies.latest_vacancies.filter(vacancy => vacancy.category_id === category.id)
+               console.log(companiesBy)
+            }
+            return { ...category, vacancies: vacanciesBy }
+         })
 
          return (
             {
                ...state,
-               categories: updateCategories || action.categories
+               categories: updateCategories
             }
          );
 
+      }
    }
 
    return (
@@ -217,6 +235,7 @@ export const CompaniesContextProvider = (props) => {
       dispatchState({ type: 'CHANGE LIKE VACANCY', like: data.like, id })
       fetchData()
    }
+
 
 
 

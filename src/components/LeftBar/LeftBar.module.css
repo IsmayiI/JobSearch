@@ -44,17 +44,6 @@
       align-items: center;
       margin: 0;
       padding: 15px;
-      border-bottom: 1px solid #eaeaea;
-      transition: .3s linear;
-   }
-
-   .header.dark {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      margin: 0;
-      padding: 15px;
-      border-bottom: 1px solid rgba(255, 255, 255, .2);
    }
 
    .action {
