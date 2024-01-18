@@ -12,7 +12,7 @@ const Categories = () => {
 
 
    const filterCategories = (searchValue) => {
-      const newCategories = categories.filter((category) => category.name.toLowerCase().includes(searchValue))
+      const newCategories = categories.filter((category) => category.name.toLowerCase().includes(searchValue.toLowerCase()))
       setFilteredCategories(newCategories)
    }
    const updateCategories = filteredCategories.length ? filteredCategories : categories

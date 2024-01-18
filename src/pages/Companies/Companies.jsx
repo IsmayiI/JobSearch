@@ -16,7 +16,7 @@ const Companies = () => {
    }
 
    const filterCompanies = (searchValue) => {
-      const newCompanies = companies.filter((company) => company.name.toLowerCase().includes(searchValue))
+      const newCompanies = companies.filter((company) => company.name.toLowerCase().includes(searchValue.toLowerCase()))
       setFilteredCompanies(newCompanies)
    }
 

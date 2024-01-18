@@ -19,7 +19,7 @@ const Category = ({ image, name, vacancies }) => {
             titleLit={`${vacancies.length} vacancies`}
             svg={image}
             rem={"4.2rem"} >
-            <div>
+            <div className={styles.count}>
                {vacancies.length} companies
             </div>
          </Subsection>

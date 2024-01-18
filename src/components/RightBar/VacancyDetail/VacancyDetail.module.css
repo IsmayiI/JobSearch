@@ -105,3 +105,13 @@
       padding: 0 2rem;
    }
 }
+
+@media (max-width: 1100px) {
+   .like svg:hover {
+      fill: none;
+   }
+
+   .detail.dark .like svg:hover {
+      fill: none;
+   }
+}
