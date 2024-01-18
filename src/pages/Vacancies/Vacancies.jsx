@@ -4,10 +4,10 @@ import { Link, Outlet } from 'react-router-dom'
 import { useContext, useEffect, useState } from 'react'
 import CompaniesContext from '../../context/CompaniesContext'
 import Search from '../../components/UI/Search'
+import Filter from './Filter'
 
 const Vacancies = () => {
-
-   const { vacancies, fetchSlugVacancyData, changeViewVacancy } = useContext(CompaniesContext)
+   const { vacancies, fetchSlugVacancyData, changeViewVacancy, categoryFilter } = useContext(CompaniesContext)
    const [filteredVacancies, setFilteredVacancies] = useState([])
    const [search, setSearch] = useState('');
 
@@ -32,11 +32,19 @@ const Vacancies = () => {
 
 
    useEffect(() => {
-      const newVacancies = vacancies.filter((vacancy) => vacancy.name.toLowerCase().includes(search))
-      setFilteredVacancies(newVacancies)
-   }, [search, vacancies])
+      let updateVacancies = vacancies
+      if (categoryFilter) {
+         updateVacancies = vacancies.filter((vacancy) => vacancy.category_id === categoryFilter.id)
+         setFilteredVacancies(updateVacancies)
+      }
+      updateVacancies = updateVacancies.filter((vacancy) => vacancy.name.toLowerCase().includes(search))
+      setFilteredVacancies(updateVacancies)
 
-   const updateVacancies = filteredVacancies.length ? filteredVacancies : vacancies
+   }, [search, vacancies, categoryFilter])
+
+
+   let updateVacancies = filteredVacancies.length ? filteredVacancies : vacancies
+
 
 
 
@@ -45,6 +53,7 @@ const Vacancies = () => {
          <ScrollBar>
             <div>
                <Search filterArr={filterVacancies} title={'Site search'} />
+               {categoryFilter && <Filter title={categoryFilter.name} />}
                {updateVacancies.map(vacancy => (
                   <Link onClick={() => clickHandler(vacancy.slug, vacancy.view, vacancy.id)} to={vacancy.slug} key={vacancy.id}>
                      <Vacancy img={vacancy.image}

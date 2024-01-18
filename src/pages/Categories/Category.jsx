@@ -20,7 +20,7 @@ const Category = ({ image, name, vacancies }) => {
             svg={image}
             rem={"4.2rem"} >
             <div>
-               1 companies
+               {vacancies.length} companies
             </div>
          </Subsection>
       </div>

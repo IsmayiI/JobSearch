@@ -15,7 +15,7 @@ const Companies = () => {
       setActiveCompany(slug)
    }
 
-   const filterVacancies = (searchValue) => {
+   const filterCompanies = (searchValue) => {
       const newCompanies = companies.filter((company) => company.name.toLowerCase().includes(searchValue))
       setFilteredCompanies(newCompanies)
    }
@@ -27,7 +27,7 @@ const Companies = () => {
       <>
          <ScrollBar>
             <div>
-               <Search filterArr={filterVacancies} title={'Search for companies'} />
+               <Search filterArr={filterCompanies} title={'Search for companies'} />
                {updateCompanies.map(company => (
                   <Link onClick={() => clickHandler(company.slug)} key={company.id} to={company.slug}>
                      <Company

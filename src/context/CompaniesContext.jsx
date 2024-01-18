@@ -6,6 +6,7 @@ const defaultState = {
    vacancies: [],
    favorites: [],
    categories: [],
+   categoryFilter: null,
    company: null,
    vacancy: null,
    view: null,
@@ -15,6 +16,7 @@ const defaultState = {
    fetchSlugVacancyData: (slug) => { },
    changeViewVacancy: () => { },
    changeLikeVacancy: () => { },
+   filterCategoryVacancies: () => { },
 }
 
 const CompaniesContext = React.createContext(defaultState)
@@ -75,16 +77,6 @@ const reducerFunc = (state, action) => {
                }
             }
          })
-
-
-         // const updateVacancies = action.vacancies.map(vacancy => {
-         //    for (let i = 0; i < state.companies.length; i++) {
-         //       if (vacancy.company_id === state.companies[i].id) {
-         //          const updateSlug = `${state.companies[i].slug}-${vacancy.slug}`
-         //          return { ...vacancy, image: state.companies[i].image, company_name: state.companies[i].name, slug: updateSlug }
-         //       }
-         //    }
-         // })
 
          return (
             {
@@ -147,11 +139,6 @@ const reducerFunc = (state, action) => {
       case 'SET CATEGORIES': {
          let updateCategories = action.categories.map(category => {
             const vacanciesBy = state.vacancies.filter(vacancy => vacancy.category_id === category.id)
-            console.log(state.companies)
-            if (state.companies.latest_vacancies?.length) {
-               const companiesBy = state.companies.latest_vacancies.filter(vacancy => vacancy.category_id === category.id)
-               console.log(companiesBy)
-            }
             return { ...category, vacancies: vacanciesBy }
          })
 
@@ -159,6 +146,33 @@ const reducerFunc = (state, action) => {
             {
                ...state,
                categories: updateCategories
+            }
+         );
+
+      }
+
+
+
+      case 'FILTER CATEGORY VACANCIES': {
+
+         return (
+            {
+               ...state,
+               categoryFilter: {
+                  id: action.id,
+                  name: action.name,
+               }
+            }
+         );
+
+      }
+
+      case 'DELETE FILTER CATEGORY': {
+
+         return (
+            {
+               ...state,
+               categoryFilter: null,
             }
          );
 
@@ -176,7 +190,7 @@ const reducerFunc = (state, action) => {
 export const CompaniesContextProvider = (props) => {
    const [state, dispatchState] = useReducer(reducerFunc, defaultState)
 
-   const { companies, company, vacancies, vacancy, view, favorites, categories } = state
+   const { companies, company, vacancies, vacancy, view, favorites, categories, categoryFilter } = state
 
 
    useEffect(() => {
@@ -236,6 +250,14 @@ export const CompaniesContextProvider = (props) => {
       fetchData()
    }
 
+   const filterCategoryVacancies = (id, name) => {
+      dispatchState({ type: 'FILTER CATEGORY VACANCIES', id, name })
+   }
+
+   const deleteFilterCategory = () => {
+      dispatchState({ type: 'DELETE FILTER CATEGORY' })
+   }
+
 
 
 
@@ -254,6 +276,9 @@ export const CompaniesContextProvider = (props) => {
          changeViewVacancy,
          changeLikeVacancy,
          view,
+         filterCategoryVacancies,
+         categoryFilter,
+         deleteFilterCategory
       }}>
          {props.children}
       </CompaniesContext.Provider>
