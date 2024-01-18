@@ -1,7 +1,8 @@
-import { useContext } from 'react';
+import { useContext, useState, useEffect } from 'react';
 import Clock from '../../../assets/icons/Clock'
 import styles from './VacancyInfo.module.css'
 import CompaniesContext from '../../../context/CompaniesContext';
+import { Link } from 'react-router-dom';
 
 const createDeadline = (date) => {
    const createdDate = new Date(date)
@@ -21,13 +22,29 @@ const createDeadline = (date) => {
 
 
 const VacancyInfo = ({ isLight }) => {
+   const [width, setWidth] = useState(false)
 
-   const { vacancy } = useContext(CompaniesContext)
+
+   useEffect(() => {
+      handleResize()
+   }, [])
+
+   function handleResize() {
+      const windowWidth = window.innerWidth;
+      windowWidth <= 1100 ? setWidth(true) : setWidth(false)
+   }
+
+   window.addEventListener('resize', handleResize);
+
+   const { vacancy, filterCategoryVacancies, categories } = useContext(CompaniesContext)
    const { name, created_at, industry } = vacancy
 
    const modeStyle = isLight ? '' : styles.dark
 
-
+   const clickHandler = () => {
+      const category = categories.find(category => category.name === industry)
+      filterCategoryVacancies(category.id, category.name)
+   }
 
    const deadline = createDeadline(created_at)
 
@@ -38,7 +55,7 @@ const VacancyInfo = ({ isLight }) => {
             <Clock />
             <span>{deadline}</span>
          </div>
-         <a href="#">{industry}</a>
+         <Link to={width ? '/vacancies' : '#'} onClick={clickHandler}>{industry}</Link>
       </div>
    )
 }
