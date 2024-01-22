@@ -3,6 +3,7 @@ import mapImg from '../../assets/imgs/map.webp'
 import { useContext } from 'react'
 import CompaniesContext from '../../context/CompaniesContext'
 import ModeContext from '../../context/ModeContext'
+import { formattedText } from '../../utils/utils'
 
 const AboutCompany = () => {
 
@@ -12,12 +13,14 @@ const AboutCompany = () => {
 
    const modeStyle = isLight ? '' : styles.dark
 
+   console.log(description)
+
 
    return (
       <div className={`${styles.about} ${modeStyle}`}>
          <h4>About</h4>
          <p>
-            {description}
+            {formattedText(description)}
          </p>
          <div className={styles.info}>
             <div className={styles.map}>

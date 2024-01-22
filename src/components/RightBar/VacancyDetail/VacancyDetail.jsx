@@ -14,7 +14,6 @@ import ModeContext from '../../../context/ModeContext'
 const VacancyDetail = () => {
    const { view, vacancy, fetchSlugVacancyData, changeLikeVacancy } = useContext(CompaniesContext)
 
-
    const { slug } = useParams()
 
 

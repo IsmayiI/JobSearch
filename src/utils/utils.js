@@ -8,3 +8,6 @@ export const createDateString = (createdDate) => {
 
    return `${day} ${month}`
 }
+
+
+export const formattedText = (text) => text.replace(/\\n/g, '\n')
